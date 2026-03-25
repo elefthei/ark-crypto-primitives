@@ -3,6 +3,7 @@ use crate::Error;
 use ark_serialize::{CanonicalDeserialize, CanonicalSerialize};
 use ark_std::{borrow::Borrow, fmt::Debug, hash::Hash, rand::Rng};
 
+#[cfg(feature = "blake3")]
 pub mod blake3;
 pub mod bowe_hopwood;
 pub mod byte_digest;
