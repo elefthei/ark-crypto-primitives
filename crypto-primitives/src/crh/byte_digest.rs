@@ -1,6 +1,9 @@
 use crate::sponge::Absorb;
 use ark_serialize::{CanonicalDeserialize, CanonicalSerialize};
 
+#[cfg(not(feature = "std"))]
+use ark_std::vec::Vec;
+
 // Some CRHs output byte arrays.
 
 // Merkle tree Config requires a trait that implements the following functions.
