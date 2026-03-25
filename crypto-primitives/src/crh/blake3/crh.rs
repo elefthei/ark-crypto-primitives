@@ -74,13 +74,13 @@ impl TwoToOneCRHScheme for Blake3TwoToOneCRH {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use ark_std::rand::thread_rng;
+    use ark_std::test_rng;
 
     type F = ark_ed_on_bls12_381::Fr;
 
     #[test]
     fn blake3_crh_deterministic() {
-        let params = Blake3CRH::<F>::setup(&mut thread_rng()).unwrap();
+        let params = Blake3CRH::<F>::setup(&mut test_rng()).unwrap();
         let input = vec![F::from(42u64), F::from(99u64)];
 
         let h1 = Blake3CRH::<F>::evaluate(&params, input.as_slice()).unwrap();
@@ -90,7 +90,7 @@ mod tests {
 
     #[test]
     fn blake3_crh_different_inputs() {
-        let params = Blake3CRH::<F>::setup(&mut thread_rng()).unwrap();
+        let params = Blake3CRH::<F>::setup(&mut test_rng()).unwrap();
         let a = vec![F::from(1u64)];
         let b = vec![F::from(2u64)];
 
@@ -101,7 +101,7 @@ mod tests {
 
     #[test]
     fn blake3_two_to_one_deterministic() {
-        let params = Blake3TwoToOneCRH::setup(&mut thread_rng()).unwrap();
+        let params = Blake3TwoToOneCRH::setup(&mut test_rng()).unwrap();
         let left = ByteDigest([1u8; 32]);
         let right = ByteDigest([2u8; 32]);
 
@@ -115,7 +115,7 @@ mod tests {
 
     #[test]
     fn blake3_compress_matches_evaluate() {
-        let params = Blake3TwoToOneCRH::setup(&mut thread_rng()).unwrap();
+        let params = Blake3TwoToOneCRH::setup(&mut test_rng()).unwrap();
         let left = ByteDigest([0xAA; 32]);
         let right = ByteDigest([0xBB; 32]);
 
