@@ -41,16 +41,16 @@ debug-assertions = true
 debug = true
 
 [patch.crates-io]
-ark-relations = { git = "https://github.com/arkworks-rs/snark" }
-ark-snark = { git = "https://github.com/arkworks-rs/snark" }
-ark-r1cs-std = { git = "https://github.com/arkworks-rs/r1cs-std" }
+ark-relations = { version = "0.5.0" }
+ark-snark = { version = "0.5.0" }
+ark-r1cs-std = { version = "0.5.0" }
 # ark-relations = { path = "../snark/relations", default-features = true }
 # ark-r1cs-std = { path = "../r1cs-std", default-features = true }
 
-ark-ff = { git = "https://github.com/arkworks-rs/algebra.git" }
-ark-serialize = { git = "https://github.com/arkworks-rs/algebra.git" }
-ark-ec = { git = "https://github.com/arkworks-rs/algebra.git" }
-ark-poly = { git = "https://github.com/arkworks-rs/algebra.git" }
+ark-ff = { version = "0.5.0" }
+ark-serialize = { version = "0.5.0" }
+ark-ec = { version = "0.5.0" }
+ark-poly = { version = "0.5.0" }
 
 # [patch."https://github.com/arkworks-rs/snark"]
 # ark-snark = { path = "../snark/snark", default-features = true }
